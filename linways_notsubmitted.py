@@ -12,19 +12,11 @@ from bs4 import BeautifulSoup
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pretty_html_table import build_table
-import cronitor
-cronitor.api_key = 'yourownapikey'
 
 myflag = 0
 
-cronitor.Monitor.put(
-    key='fypCOz',
-    type='job'
-)
 
 
-monitor = cronitor.Monitor('fypCOz')
-monitor.ping(state='run')
 
 def py_mail(SUBJECT, BODY, TO, FROM):
     """With this function we send out our HTML email"""
@@ -54,7 +46,7 @@ Please visit us online!"""
         server.set_debuglevel(1)
 
     # Credentials (if needed) for sending the mail
-    password = 'yourownpassword'
+    password = 'gdjgxqihmhrzjvom'
 
     server.starttls()
     server.login(FROM,password)
@@ -88,7 +80,7 @@ name_var=tk.StringVar()
 passw_var=tk.StringVar() 
 date_var=tk.StringVar() 
 
-staff = ['Dr.Vishnu Rajan','Binet Rose Devassy', 'Chinchu Jose', 'Deepak Joseph Babu', 'Dr. Arun Thomas', 'Dr. G.R.Gnana King', 'Dr. K.R.Joy', 'Jisha Jacob', 'Priyanka Menon A S', 'Santhosh Kumar M S', 'Silpa P A', 'Vidyamol K', 'Ambily Francis'] 
+staff = ['Dr. G.R.Gnana King','Binet Rose Devassy', 'Jisha Jacob', 'Chinchu Jose', 'Siji Joseph', 'Dr. Arun Thomas', 'Jisha Jacob', 'Anju Babu', 'Silpa P A', 'Vidyamol K', 'Ambily Francis', 'Saran K.B'] 
 
 
 
@@ -107,7 +99,7 @@ def submit():
         pasw = passw_var.get()
         days = date_entry.get()
         #chrome driver path
-        driver = webdriver.Chrome('/Users/vishnurajan/Documents/Developer/Python/Linways/chromedriver') 
+        driver = webdriver.Chrome('//Users/vishnurajan/Desktop/sahrdaya.linways.bot-main/chromedriver') 
         #opening website
         driver.get("https://sahrdaya.linways.com/staff/staff.php?menu=staffDailyWorkLog&action=worklogNotSubmittedReport&report=worklogreport")
         # delay
@@ -188,7 +180,6 @@ def submit():
         time.sleep(20)
         print(stafftable)
         print("Hey Vishnu, While you were away I just completed the daily report tabulation for you. I have also sent the same to sudha mam. Have a nice free time!")
-        monitor.ping(state='complete')
         root.after(0,root.destroy)
 
 # creating a label for  
@@ -218,7 +209,7 @@ passw_entry=tk.Entry(root,
                      font = ('calibre',10,'normal'), 
                      show = '*') 
 
-passw_entry.insert(0, "yourownpassword")
+passw_entry.insert(0, "hod@123R")
 
       
 # creating a label for  
